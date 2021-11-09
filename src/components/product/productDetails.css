@@ -42,10 +42,9 @@
     width: 70%;
     padding: 1vmax 0;
 }
-.details_block_2>span{
-color: rgba(29, 29, 29, 0.582);
-font: 200 0.9vmax "cursive";
-}
+.details_block_2-span{
+font: 200 1vmax cursive;
+} 
 .details_block_3{
     width: 70%;
 }
@@ -151,15 +150,16 @@ font: 300 1.1vmax 'sans-serif';
     margin: 1vmax;
     padding: 3vmax;
 }
-.reviewCard >img{
+.reviewCard >img{ 
     width: 5vmax;
 }
 .reviewCard>p{
     color: rgba(0, 0, 0, 0.836);
     font: 600 0.9vmax "Roboto";
 }
-.reviewCard>span{
+.reviewCardComment{
     color: rgba(0, 0, 0, 0.445);
+    font: 300 1vmax cursive;
 }
 .noReviews{
     font: 400 1.3vmax "Gill Sans";
@@ -169,6 +169,17 @@ font: 300 1.1vmax 'sans-serif';
 .reviews{
     display: flex;
     overflow: auto;
+}
+.submitDialog{
+    display: flex;
+    flex-direction: column;
+}
+.submitDialogTextArea{
+    border: 1px solid rgba(0,0,0,0.2);
+    margin: 1vmax 0;
+    outline: none;
+    padding: 1rem;
+    font: 300 1rem "Roboto";
 }
 
 @media screen and (max-width:600px) {
@@ -234,5 +245,11 @@ font: 300 1.1vmax 'sans-serif';
         padding: 1.5vmax;
         width: 20vmax;
         margin: 3vmax 0;
+    }
+    .reviewCard > p{
+        font: 600 3vw "Roboto";
+    }
+    .reviewCardComment{
+        font: 300 5vw cursive;
     }
 }

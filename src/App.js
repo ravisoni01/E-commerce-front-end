@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import WebFont from 'webfontloader';
 import { useDispatch, useSelector } from 'react-redux'
 import { loadStripe } from '@stripe/stripe-js'
@@ -28,6 +28,12 @@ import Payment from './components/cart/Payment.js'
 import ProtectedRoute from './components/routes/ProtectedRoute'
 import OrderSuccess from './components/cart/OrderSuccess.js'
 import MyOrders from './components/order/MyOrders'
+import OrdersDetail from './components/order/OrdersDetail'
+import Dashboard from './components/admin/Dashboard.js'
+import ProductList from './components/admin/ProductList.js'
+import NewProduct from './components/admin/NewProduct'
+import UpdateProduct from './components/admin/UpdateProduct.js'
+import OrderList from './components/admin/OrderList'
 
 function App() {
   const dispatch = useDispatch()
@@ -72,7 +78,7 @@ function App() {
       <Route exact path='/cart' component={Cart} />
 
       <ProtectedRoute exact path='/shipping' component={Shipping} />
-      <ProtectedRoute exact path='/order/confirm' component={ConfirmOrder} />
+
 
       {
         stripeApiKey && (
@@ -84,6 +90,22 @@ function App() {
 
       <ProtectedRoute exact path='/success' component={OrderSuccess} />
       <ProtectedRoute exact path='/orders' component={MyOrders} />
+
+      <Switch>
+        <ProtectedRoute exact path='/order/confirm' component={ConfirmOrder} />
+
+        <ProtectedRoute exact path='/order/:id' component={OrdersDetail} />
+      </Switch>
+
+      <ProtectedRoute isAdmin={true} exact path='/admin/dashboard' component={Dashboard} />
+
+      <ProtectedRoute isAdmin={true} exact path='/admin/products' component={ProductList} />
+
+      <ProtectedRoute isAdmin={true} exact path='/admin/product' component={NewProduct} />
+
+      <ProtectedRoute isAdmin={true} exact path='/admin/products/:id' component={UpdateProduct} />
+
+      <ProtectedRoute isAdmin={true} exact path='/admin/orders' component={OrderList} />
 
       <Footer />
     </Router>

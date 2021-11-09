@@ -44,7 +44,7 @@ const UserOptions = ({ user }) => {
         history.push('/account')
     }
     function dashboard() {
-        history.push('/dashboard')
+        history.push('/admin/dashboard')
     }
     function cart() {
         history.push('/cart')

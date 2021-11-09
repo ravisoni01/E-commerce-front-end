@@ -11,7 +11,6 @@
     left: 0;
 }
 .searchBox > input[type="text"]{
-    /* box-shadow: 0 0 6px black; */
     background-color: rgb(255, 251, 245);
     border: none;
     color: black;
@@ -19,7 +18,7 @@
     width: 50%;
     outline: none;
     border-radius: 10px 0 0 10px;
-    font: 300 1.5vmax "cursive";
+    font: 300 1.5vmax cursive;
     box-sizing: 'border-box';
 
 }
@@ -34,7 +33,6 @@
     cursor: pointer;
     color: white;
     transition: all 0.3s;
-/* margin-left: 5px; */
 }
 .searchBox > input[type="submit"]:hover{
 background-color: rgb(207, 40, 10);
